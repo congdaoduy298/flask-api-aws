@@ -1,1 +1,1 @@
-web: gunicorn --bind :8501 application --workers 3 --threads 2
+web: gunicorn --bind :8000 application --workers 3 --threads 2
