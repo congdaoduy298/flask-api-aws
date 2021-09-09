@@ -22,7 +22,7 @@ def index():
     return jsonify("Hello, world!")
 
 @application.route("/test", methods=['GET'])
-def index():
+def test():
     return jsonify("Test API.")
 
 	
