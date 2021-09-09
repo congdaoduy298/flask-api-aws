@@ -7,14 +7,24 @@ Author: Scott Rodkey - rodkeyscott@gmail.com
 Step-by-step tutorial: https://medium.com/@rodkey/deploying-a-flask-application-on-aws-a72daba6bb80
 '''
 
-from flask import Flask
+from flask import Flask, jsonify
+import json 
 
 application = Flask(__name__)
 
+
+@application.route("/favicon.ico")
+def favicon():
+    return "", 200
+
 @application.route("/", methods=['GET', 'POST'])
-
 def index():
-    return "Hello, world!"
+    return jsonify("Hello, world!")
 
+@application.route("/test", methods=['GET'])
+def index():
+    return jsonify("Test API.")
+
+	
 if __name__ == '__main__':
     app = application.run(host='0.0.0.0', port=8000)
